@@ -1,0 +1,28 @@
+{
+  "name": "TrainingLog",
+  "version": "1.0.0",
+  "authors": [
+    "Przemek Bieliński <przemek@codequest.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "*",
+    "backbone": "*",
+    "marionette": "*"
+  }
+}

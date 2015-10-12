@@ -1,0 +1,8 @@
+@TrainingLog.module 'Models', (Models, App, Backbone, Marionette, $, _) ->
+
+    Models.Food = Backbone.Model.extend()
+    Models.Foods = Backbone.Collection.extend
+        model: Models.Food
+        url: '/foods'
+        fetchCollection: ->
+            @fetch(reset: true)

@@ -1,0 +1,23 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "pages/p_main";
+@import "blocks/b_header";
+@import "blocks/b_footer";
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    .page-wrap {
+      height: auto;
+      min-height: 100%;
+      margin-bottom: -150px;
+      &:after {
+        content: "";
+        display: block;
+        height: 150px;
+      }
+    }
+  }
+}

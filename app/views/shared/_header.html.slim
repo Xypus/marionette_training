@@ -1,0 +1,8 @@
+nav.navbar.navbar-default
+  .header-main
+    .app-name
+      p
+        |Training Log
+    .signout
+      - if current_user
+        = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-success navbar-btn'

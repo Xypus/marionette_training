@@ -1,0 +1,21 @@
+@TrainingLog = do (Backbone, Marionette) ->
+
+    App = new Marionette.Application()
+    App.config =
+        sitename: 'TrainingLog'
+        asset_host: <%= "'#{Rails.configuration.action_controller.asset_host}'" %>
+        env: <%= "'#{Rails.env}'" %>
+
+    App.addRegions
+        main: '#main'
+
+    App.on 'before:start', ->
+
+    App.on 'start', ->
+        Backbone.history.start(pushState: true, silent: true)
+        Backbone.history.loadUrl Backbone.history.getFragment()
+
+    App
+
+$ ->
+    TrainingLog.start()
