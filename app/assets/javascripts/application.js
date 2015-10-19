@@ -18,6 +18,13 @@
 //= require marionette/lib/core/backbone.marionette
 //= require backbone.wreqr/lib/backbone.wreqr
 //= require backbone.babysitter/lib/backbone.babysitter
-//= require app/main
 //= require jquery
 //= require bootstrap-sprockets
+//= require_tree ./templates
+//= require app/main
+//= require app/renderer
+//= require_tree ./app/entities
+//= require_tree ./app/products
+
+
+

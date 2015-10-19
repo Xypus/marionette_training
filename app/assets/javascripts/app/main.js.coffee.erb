@@ -1,6 +1,19 @@
 @TrainingLog = do (Backbone, Marionette) ->
 
+    $.ajaxSetup
+        dataType: 'json'
+
     App = new Marionette.Application()
+
+    App.Router = new Marionette.AppRouter
+
+        controller:
+            productsModule: ->
+                App.Products.start()
+
+        appRoutes:
+            'products': 'productsModule'
+
     App.config =
         sitename: 'TrainingLog'
         asset_host: <%= "'#{Rails.configuration.action_controller.asset_host}'" %>
@@ -12,7 +25,7 @@
     App.on 'before:start', ->
 
     App.on 'start', ->
-        Backbone.history.start(pushState: true, silent: true)
+        Backbone.history.start(silent: true)
         Backbone.history.loadUrl Backbone.history.getFragment()
 
     App

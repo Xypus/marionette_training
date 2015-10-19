@@ -1,7 +1,8 @@
 class FoodsController < ApplicationController
+  respond_to :json
 
   def index
-    render json: Food.all, each_serializer: FoodsSerializer
+    respond_with Food.all, each_serializer: FoodsSerializer, root: false
   end
 
 end

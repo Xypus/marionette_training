@@ -8,7 +8,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'active_model_serializers', '0.9.3'
 gem 'devise', '3.5.1'
 
-
 #frontend
 
 gem 'tilt-jade', '~> 1.2.0'
