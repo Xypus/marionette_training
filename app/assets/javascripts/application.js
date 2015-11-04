@@ -25,6 +25,7 @@
 //= require app/renderer
 //= require_tree ./app/entities
 //= require_tree ./app/products
+//= require_tree ./app/header
 
 
 

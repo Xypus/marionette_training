@@ -8,11 +8,11 @@
     App.Router = new Marionette.AppRouter
 
         controller:
-            productsModule: ->
+            productsRouter: ->
                 App.Products.start()
 
         appRoutes:
-            'products': 'productsModule'
+            'products': 'productsRouter'
 
     App.config =
         sitename: 'TrainingLog'
@@ -21,12 +21,14 @@
 
     App.addRegions
         main: '#main'
+        headerButtons: '#header-buttons'
 
     App.on 'before:start', ->
 
     App.on 'start', ->
         Backbone.history.start(silent: true)
         Backbone.history.loadUrl Backbone.history.getFragment()
+        @getRegion('headerButtons').show(new App.Header.Buttons)
 
     App
 

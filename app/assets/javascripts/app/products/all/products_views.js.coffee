@@ -1,6 +1,5 @@
 @TrainingLog.module 'Products', (Products, App, Backbone, Marionette, $, _) ->
 
-
   Products.Empty = Marionette.ItemView.extend
 
     tagName: 'tr'
@@ -19,11 +18,14 @@
       'click @ui.productEdit': 'productEdit'
       'click @ui.productDelete': 'productDelete'
 
+    initialize: ->
+      @listenTo(@model, 'destroy', @remove)
+
     productEdit: ->
       console.log('Clicked product edit')
 
     productDelete: ->
-      console.log('Clicked product delete')
+      @model.destroy()
 
   Products.All = Marionette.CompositeView.extend
 
@@ -31,3 +33,24 @@
     template: 'products/all'
     childView: Products.Single
     childViewContainer: 'tbody'
+
+    ui:
+      newProduct: '.add'
+
+    events:
+      'click @ui.newProduct': 'newProductModal'
+
+    newProductModal: ->
+      newProductView = new Products.Modal
+      @listenTo newProductView, 'model:saved', (model) ->
+        @collection.add model
+      App.modalRegion.show(newProductView)
+
+
+
+
+
+
+
+
+

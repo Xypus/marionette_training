@@ -13,4 +13,19 @@
       collection = new App.Entities.Products
       collection.fetchCollection()
       @getRegion('main').show(new Products.All(collection: collection))
+      App.addRegions
+        modalRegion: "#modal"
+        console.log('added modal region')
+
+    mainView: ->
+      console.log('show hello')
+
+
+
+
+
+
+
+
+
 

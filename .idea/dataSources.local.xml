@@ -4,15 +4,9 @@
     <data-source name="Rails TrainingLog: development" uuid="e8068c7c-a632-4404-848b-57d855c7994d">
       <user-name>TrainingLog</user-name>
       <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffedff8dfebdfe3dfe4dfe3dfe4dfeddfe6dfe5dfeddff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
-      <schema-pattern>TrainingLog_development.pg_catalog TrainingLog_development.public</schema-pattern>
-      <default-schemas>TrainingLog_development.pg_catalog TrainingLog_development.public</default-schemas>
     </data-source>
-    <data-source name="Rails TrainingLog: test" uuid="7246beb9-dd45-45e5-9baf-1ce8488d48b0">
-      <schema-pattern>TrainingLog_test.*</schema-pattern>
-      <default-schemas>TrainingLog_test.*</default-schemas>
-    </data-source>
+    <data-source name="Rails TrainingLog: test" uuid="7246beb9-dd45-45e5-9baf-1ce8488d48b0" />
     <data-source name="Rails TrainingLog: production" uuid="904e7375-a877-4d1a-8975-9d043cde272d">
-      <first-sync>true</first-sync>
       <user-name>TrainingLog</user-name>
       <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffedff8dfebdfe3dfe4dfe3dfe4dfeddfe6dfe5dfeddff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
     </data-source>
