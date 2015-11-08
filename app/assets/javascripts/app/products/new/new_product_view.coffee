@@ -10,45 +10,67 @@
       'click @ui.saveProduct': 'saveProduct'
 
     onRender: ->
-      console.log('rendering')
       Backbone.Validation.bind @, ->
         selector: 'id'
-        attributes: 'inputNames'
-        console.log('validation bound')
-        valid: (view, attr) ->
-          console.log(attr)
-        invalid: (view, attr, error) ->
-          console.log(error)
-#          selector = '#' + String(attr)
-#          $(selector).parent().addClass('has-error')
+
       $('#modal').modal 'show'
 
     saveProduct: (e) ->
       e.preventDefault()
-      $('form').children().removeClass('has-error')
-      $('form').find('.errors').each ->
-        $(@).css('display', 'none')
-      $('form').find('label').each ->
-        $(@).css('display', 'initial')
-      model = new App.Entities.Product()
       attrs =
         name: $('#name').val()
         calories: $('#calories').val()
         proteins: $('#proteins').val()
         carbs: $('#carbs').val()
         fats: $('#fats').val()
-      model.save {product: attrs},
-        success: (model) =>
-          @trigger 'model:saved', model
-          $('#modal').modal 'hide'
-        error: (model, response) ->
-          errors = $.parseJSON(response.responseText).errors
-          $.each errors, (key, value) ->
-            selector = '#' + String(key)
-            selectorParent = $(selector).parent()
-            selectorParent.addClass('has-error')
-            label = selectorParent.find('label')
-            errorsDiv = selectorParent.find('.errors')
-            label.css('display', 'none')
-            errorsDiv.css('display', 'block').html('Value ' + String(value) + '!').css('color', '#a94442')
+      formModel = @model.set(attrs)
+      validatedModel = formModel.validate()
+      if formModel.isValid()
+        formModel.save {product: attrs},
+          success: (model) =>
+            console.log model
+            @trigger 'model:saved', model
+            $('#modal').modal 'hide'
+      else
+        $('form').children().removeClass('has-error')
+        $('form').find('.errors').each ->
+          $(@).css('display', 'none')
+        $('form').find('label').each ->
+          $(@).css('display', 'initial')
+        $.each validatedModel, (key, value) ->
+          selector = '#' + String(key)
+          selectorParent = $(selector).parent()
+          selectorParent.addClass('has-error')
+          label = selectorParent.find('label')
+          errorsDiv = selectorParent.find('.errors')
+          label.css('display', 'none')
+          errorsDiv.css('display', 'block').html(String(value)).css('color', '#a94442')
+
+
+# BACKEND VALIDATION
+#      $('form').children().removeClass('has-error')
+#      $('form').find('.errors').each ->
+#        $(@).css('display', 'none')
+#      $('form').find('label').each ->
+#        $(@).css('display', 'initial')
+#      attrs =
+#        name: $('#name').val()
+#        calories: $('#calories').val()
+#        proteins: $('#proteins').val()
+#        carbs: $('#carbs').val()
+#        fats: $('#fats').val()
+#      @model.save {product: attrs},
+#        success: (@model) =>
+#          @trigger 'model:saved', model
+#          $('#modal').modal 'hide'
+#        error: (@model, response) ->
+#          errors = $.parseJSON(response.responseText).errors
+#          $.each errors, (key, value) ->
+#            selector = '#' + String(key)
+#            selectorParent = $(selector).parent()
+#            selectorParent.addClass('has-error')
+#            label = selectorParent.find('label')
+#            errorsDiv = selectorParent.find('.errors')
+#            label.css('display', 'none')
+#            errorsDiv.css('display', 'block').html('Value ' + String(value) + '!').css('color', '#a94442')
 

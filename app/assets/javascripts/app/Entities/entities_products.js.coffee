@@ -6,36 +6,24 @@
       validation: {
         name: {
           required: true
-          msg: 'Please enter product name.'
+          msg: 'Please enter product name'
         }
-        proteins: [{
+        proteins: {
           pattern: 'number'
           msg: 'Please enter a number'
-        },{
-          required: true
-          msg: 'Field can\'t be blank'
-        }]
-        fats: [{
+        }
+        fats:  {
           pattern: 'number'
           msg: 'Please enter a number'
-        },{
-            required: true
-            msg: 'Field can\'t be blank'
-          }]
-        carbs: [{
+        }
+        carbs:  {
           pattern: 'number'
           msg: 'Please enter a number'
-        },{
-            required: true
-            msg: 'Field can\'t be blank'
-          }]
-        calories: [{
+        }
+        calories:  {
           pattern: 'number'
           msg: 'Please enter a number'
-        },{
-            required: true
-            msg: 'Field can\'t be blank'
-          }]
+        }
       }
 
     Entities.Products = Backbone.Collection.extend
