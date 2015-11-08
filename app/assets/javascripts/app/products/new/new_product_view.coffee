@@ -26,6 +26,10 @@
     saveProduct: (e) ->
       e.preventDefault()
       $('form').children().removeClass('has-error')
+      $('form').find('.errors').each ->
+        $(@).css('display', 'none')
+      $('form').find('label').each ->
+        $(@).css('display', 'initial')
       model = new App.Entities.Product()
       attrs =
         name: $('#name').val()
@@ -44,7 +48,7 @@
             selectorParent = $(selector).parent()
             selectorParent.addClass('has-error')
             label = selectorParent.find('label')
-            label.data('saved', label.html())
-            label.html('Value ' + String(value) + '!')
-            label.css('color', '#a94442')
+            errorsDiv = selectorParent.find('.errors')
+            label.css('display', 'none')
+            errorsDiv.css('display', 'block').html('Value ' + String(value) + '!').css('color', '#a94442')
 

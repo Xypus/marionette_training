@@ -9,17 +9,22 @@
             form
                 .form-group
                     label(for='name') Name
+                    .errors
                     input#name.form-control(type='text', placeholder='Name', name='name')
                 .form-group
                     label(for='calories') Calories
+                    .errors
                     input#calories.form-control(type='number', placeholder='0', name='calories')
                 .form-group
                     label(for='carbs') Carbs
+                    .errors
                     input#carbs.form-control(type='number', placeholder='0', name='carbs')
                 .form-group
                     label(for='proteins') Proteins
+                    .errors
                     input#proteins.form-control(type='number', placeholder='0', name='proteins')
                 .form-group
                     label(for='fats') Fats
+                    .errors
                     input#fats.form-control(type='number', placeholder='0', name='fats')
                 button#submit.btn.btn-default(type='submit') Submit
