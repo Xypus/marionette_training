@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    if @product.save
-      respond_with @product, status: :ok
+    product = Product.new(product_params)
+    if product.save
+      respond_with product, status: :ok
     else
-      respond_with @product, status: :unprocessable_entity
+      respond_with product, status: :unprocessable_entity
     end
   end
 
