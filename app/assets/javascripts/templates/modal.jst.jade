@@ -1,4 +1,3 @@
-
 .modal-content
     .modal-header
         button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
@@ -11,6 +10,15 @@
                 label(for='name') Name
                 .errors
                 input#name.form-control(type='text', placeholder='Name', name='name')
+            .form-group
+                label(for='category') Category
+                .errors
+                select#category.form-control(type='text', name='category_id')
+                    option(value='1') Animal proteins
+                    option(value='2') Low index carbs
+                    option(value='3') High index carbs
+                    option(value='4') Animal fats
+                    option(value='5') Plant-based fats
             .form-group
                 label(for='calories') Calories
                 .errors

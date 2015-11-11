@@ -6,23 +6,23 @@
       validation: {
         name: {
           required: true
-          msg: 'Please enter product name'
+          msg: 'Please enter product name!'
         }
         proteins: {
           pattern: 'number'
-          msg: 'Please enter a number'
+          msg: 'Proteins value must be a number!'
         }
         fats:  {
           pattern: 'number'
-          msg: 'Please enter a number'
+          msg: 'Fats value must be a number!'
         }
         carbs:  {
           pattern: 'number'
-          msg: 'Please enter a number'
+          msg: 'Carbs value must be a number!'
         }
         calories:  {
           pattern: 'number'
-          msg: 'Please enter a number'
+          msg: 'Calories value must be a number!'
         }
       }
 

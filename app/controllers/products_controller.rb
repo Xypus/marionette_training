@@ -28,7 +28,9 @@ class ProductsController < ApplicationController
       :calories,
       :proteins,
       :fats,
-      :carbs)
+      :carbs,
+      :category_id,
+    )
   end
 
 end

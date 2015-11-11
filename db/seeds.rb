@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Category.create(
+  [
+    {name: 'Animal proteins'},
+    {name: 'Low index carbs'},
+    {name: 'High index carbs'},
+    {name: 'Animal fats'},
+    {name: 'Plant-based fats'}
+  ]
+)
