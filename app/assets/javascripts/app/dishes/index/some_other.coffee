@@ -1,5 +1,5 @@
 @TrainingLog.module 'Dishes', (Dishes, App, Backbone, Marionette, $, _) ->
 
-  Dishes.IndexView = Marionette.ItemView.extend
+  Dishes.SomeOther = Marionette.ItemView.extend
 
-    template: 'dishes/index'
+    template: 'dishes/other'

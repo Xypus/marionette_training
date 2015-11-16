@@ -7,9 +7,8 @@
 
       controller:
         dishes: ->
-          console.log('router action fired')
-          view = new Dishes.Layout
-          view.showIndex()
+          view = new App.Main.Layout
+          view.dishesIndex()
 
       appRoutes:
         'dishes(/)': 'dishes'
