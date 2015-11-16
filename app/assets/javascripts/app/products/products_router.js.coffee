@@ -6,12 +6,12 @@
     new Marionette.AppRouter
 
       controller:
-        productsIndex: ->
-          view = new Products.Layout
-          view.productsList()
+        products: ->
+          view = new App.Main.Layout
+          view.productsIndex()
 
       appRoutes:
-        'products(/)': 'productsIndex'
+        'products(/)': 'products'
 
   Products.start = ->
     startRouter()

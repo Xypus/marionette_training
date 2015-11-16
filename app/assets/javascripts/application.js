@@ -23,6 +23,7 @@
 //= require bootstrap-sprockets
 //= require_tree ./templates
 //= require app/main
+//= require app/main_layout
 //= require app/renderer
 //= require_tree ./app/entities
 //= require_tree ./app/products
