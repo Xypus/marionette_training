@@ -18,6 +18,7 @@
 //= require marionette/lib/core/backbone.marionette
 //= require backbone.wreqr/lib/backbone.wreqr
 //= require backbone.babysitter/lib/backbone.babysitter
+//= require backbone-validation
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree ./templates
@@ -25,6 +26,8 @@
 //= require app/renderer
 //= require_tree ./app/entities
 //= require_tree ./app/products
+//= require_tree ./app/services
+//= require_tree ./app/dishes
 //= require_tree ./app/header
 
 

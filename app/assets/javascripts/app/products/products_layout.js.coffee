@@ -14,8 +14,7 @@
       collection.fetchCollection()
       @getRegion('main').show(new Products.All(collection: collection))
       App.addRegions
-        modalRegion: "#modal"
-        console.log('added modal region')
+        modalRegion: new Products.ModalRegion
 
     mainView: ->
       console.log('show hello')

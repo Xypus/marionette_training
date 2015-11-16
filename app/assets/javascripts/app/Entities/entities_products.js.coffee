@@ -3,17 +3,28 @@
     Entities.Product = Backbone.Model.extend
       urlRoot: '/products'
 
-      validate: (attrs) ->
-        if !attrs.name
-          console.log 'Please enter name!'
-        if !attrs.calories
-          console.log 'Please enter calories!'
-        if !attrs.proteins
-          console.log 'Please enter proteins!'
-        if !attrs.carbs
-          console.log 'Please enter carbs!'
-        if !attrs.fats
-          console.log 'Please enter fats!'
+      validation: {
+        name: {
+          required: true
+          msg: 'Please enter product name!'
+        }
+        proteins: {
+          pattern: 'number'
+          msg: 'Proteins value must be a number!'
+        }
+        fats:  {
+          pattern: 'number'
+          msg: 'Fats value must be a number!'
+        }
+        carbs:  {
+          pattern: 'number'
+          msg: 'Carbs value must be a number!'
+        }
+        calories:  {
+          pattern: 'number'
+          msg: 'Calories value must be a number!'
+        }
+      }
 
     Entities.Products = Backbone.Collection.extend
       model: Entities.Product

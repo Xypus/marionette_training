@@ -10,9 +10,12 @@
         controller:
             productsRouter: ->
                 App.Products.start()
+            dishesRouter: ->
+                App.Dishes.start()
 
         appRoutes:
             'products': 'productsRouter'
+            'dishes': 'dishesRouter'
 
     App.config =
         sitename: 'TrainingLog'
